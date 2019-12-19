@@ -4,6 +4,7 @@ RUN set -ex \
 # install bash and mysql-client
     && apk add --no-cache bash mysql-client
 
-COPY monitoring /usr/sbin
+COPY monitoring /root/monitoring
+RUN chmod +x /root/monitoring
 
-CMD [ "monitoring" ]
+CMD [ "/root/monitoring" ]
