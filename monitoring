@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+function check_pokemon () {
+    pokemon=$(export MYSQL_PWD=${SCANNER_PASSWORD}; mysql -h ${SCANNER_HOST} -u ${SCANNER_USER} -D ${SCANNER_DATABASE} -N -B -e "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP()")
+    echo "$(date +'%F %T') | Current Pokémon: $pokemon"
+    export MYSQL_PWD=$GRAFANA_PASSWORD 
+    mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'INSERT INTO pokemon_data(timestamp,value) VALUES(now(),"'$pokemon'")'
+}
+
+function check_quests () {
+    quests=$(export MYSQL_PWD=${SCANNER_PASSWORD}; mysql -h ${SCANNER_HOST} -u ${SCANNER_USER} -D ${SCANNER_DATABASE} -N -B -e "SELECT COUNT(*) FROM trs_quest WHERE FROM_UNIXTIME(quest_timestamp) > CURDATE()")
+    echo "$(date +'%F %T') | Current Quests: $quests"
+    export MYSQL_PWD=$GRAFANA_PASSWORD 
+    mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'INSERT INTO quest_data(timestamp,value) VALUES(now(),"'$quests'")'
+}
+
+function check_raids () {
+    raids=$(export MYSQL_PWD=${SCANNER_PASSWORD}; mysql -h ${SCANNER_HOST} -u ${SCANNER_USER} -D ${SCANNER_DATABASE} -N -B -e "SELECT COUNT(*) total, SUM(CASE WHEN level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN level=5 THEN 1 ELSE 0 END) level5 FROM raid WHERE end > UTC_TIMESTAMP()")
+    array=($(for i in $raids; do echo $i; done))
+    echo "$(date +'%F %T') | Current total Raids: ${array[0]}"
+    export MYSQL_PWD=$GRAFANA_PASSWORD 
+    mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'INSERT INTO raid_data(timestamp,raids_total,raids_1,raids_2,raids_3,raids_4,raids_5) VALUES(now(),'${array[0]}','${array[1]}','${array[2]}','${array[3]}','${array[4]}','${array[5]}')'
+}
+
+function check_spawnpoints () {
+    spawnpoints=$(export MYSQL_PWD=${SCANNER_PASSWORD}; mysql -h ${SCANNER_HOST} -u ${SCANNER_USER} -D ${SCANNER_DATABASE} -N -B -e "select count(*) from trs_spawn where calc_endminsec is null and first_detection > DATE_SUB(now(), INTERVAL 24 HOUR);")
+    echo "$(date +'%F %T') | Unknown Spanwpoints in the last 24h: $quests"
+    export MYSQL_PWD=$GRAFANA_PASSWORD 
+    mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'INSERT INTO spawnpoint_data(timestamp,value) VALUES(now(),"'$spawnpoints'")'
+}
+
+while(true); do
+    sleep 40
+    check_pokemon
+    sleep 5
+    check_quests
+    sleep 5
+    check_raids
+    sleep 5
+    check_spawnpoints
+    sleep 5
+done

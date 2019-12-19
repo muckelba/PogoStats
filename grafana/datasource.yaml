@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: MySQL
+    isDefault: true
+    type: mysql
+    url: database:3306
+    database: $MYSQL_DATABASE
+    user: $MYSQL_USER
+    password: $MYSQL_PASSWORD

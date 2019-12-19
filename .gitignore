@@ -1,0 +1,7 @@
+*.sql
+!sql/*.sql
+
+db/*
+grafana_data/*
+
+.env
