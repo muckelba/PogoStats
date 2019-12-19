@@ -4,6 +4,8 @@ A mini Monitoring tool to collect performance data of Pokémon, Quests, Raids an
 
 It uses a little bash script to collect data from a Pokémon Scanning DB and write it in its own DB. [Grafana](https://grafana.com/grafana/) is used to display that data and even send notifications.
 
+![Dashboard](https://user-images.githubusercontent.com/34460584/71187549-8ffaf100-227f-11ea-8f85-7497772b2f29.png)
+
 ## Installation
 
 To simplify the setup, this tool is running on Docker. Install Docker and docker-compose first if you haven't already.
@@ -40,9 +42,17 @@ This is the database to store the performance data. You usually just need to adj
 
 ### App:
 
-This is the little app container that runs the data collection. It needs access to the performance data database and to your scanner DB! Now this is the tricky part. Since Docker runs in its own networks, it can not access your DB running on the same server on `127.0.0.1`. You need to expose the database to your normal interface so docker can connect to it. That step is a security concern since if your server is accessable from the internet, everybody can access it and thats something you should always avoid. Luckely, you can adjust your iptables to grant access from docker, but from noone else. 
+This is the little app container that runs the data collection. It needs access to the performance data database and to your scanner DB! Now this is the tricky part. Since Docker runs in its own networks, it can not access your DB running on the same server on `127.0.0.1`. You need to somehow expose the database to the app container. You can do that in two ways:
 
-If you are running your scanner in docker, you can just share the network to the other container.
+#### Socket File
+
+You can mount the socket file of your mysql host into the app container so it feels like just connecting to `localhost`. The first step is to get the path of that file: `mysqladmin variables |grep "\.sock"`. Add that path to your .env file and change `SCANNER_HOST` to localhost and you're ready to go.
+
+#### Normal Interface (not recommended)
+
+Binding your mysql host to normal interface is usually a security concern since, if your server is accessable from the internet, everybody can access it and thats something you should always avoid. Luckily, you can adjust your iptables to grant access from docker, but from noone else. 
+
+> If you are running your scanner in docker, you can just share the network to the other container.
 
 ## Accessing the stats
 
