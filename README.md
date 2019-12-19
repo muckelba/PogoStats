@@ -56,7 +56,7 @@ Grafana is able to send messages when a alert is triggered. Set up a notificatio
 
 ### SSL
 
-You may want to secure Grafana with a proper reverse proxy and SSL. You can achieve that by adding a reverse proxy container to the `docker-stack.yml`, using Traefik or use a classic reverse proxy on your Docker host system.
+You may want to secure Grafana with a proper reverse proxy and SSL. You can achieve that by adding a reverse proxy container to the `docker-stack.yml`, using Traefik or use a classic reverse proxy on your Docker host system. Make sure that you are adjusting the Grafana settings in the env file. The port can changed to `127.0.0.1:3000:3000` since Grafana should only be accessable via the proxy and not on its original port. Learn more [here](https://grafana.com/docs/grafana/v4.5/installation/behind_proxy/#running-grafana-behind-a-reverse-proxy).
 
 ### Home Dashboard
 

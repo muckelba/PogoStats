@@ -12,8 +12,10 @@ services:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_USER: ${MYSQL_USER}
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            GF_SERVER_DOMAIN: ${GF_SERVER_DOMAIN}
+            GF_SERVER_ROOT_URL: ${GF_SERVER_ROOT_URL}
         ports:
-            - "3000:3000"
+            - "${GRAFANA_PORT}:3000"
 
     database:
         image: mariadb:10.3
