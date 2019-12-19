@@ -31,6 +31,8 @@ services:
 
     app:
         build: .
+        volumes:
+            - ${MYSQL_SOCK}:/run/mysqld/mysqld.sock
         environment: 
             GRAFANA_DATABASE: ${MYSQL_DATABASE}
             GRAFANA_USER: ${MYSQL_USER}
