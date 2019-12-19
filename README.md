@@ -15,7 +15,16 @@ Just copy the example .env file and adjust the values:
 ```bash 
 cp .env.example .env
 ```
-2. Start
+
+2. Create grafana_data dir and change ownership
+
+The grafana container needs a special user ID of that volume:
+
+```bash
+mkdir grafana_data && chown 472:472 grafana_data/
+```
+
+3. Start
 
 ```bash
 docker-compose up
