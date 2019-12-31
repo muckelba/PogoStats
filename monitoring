@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+function cleanup() {
+    echo "$(date +'%F %T') | Starting Cleanup... "
+    export MYSQL_PWD=$GRAFANA_PASSWORD 
+    while read -r table; do
+            export MYSQL_PWD=$GRAFANA_PASSWORD 
+	    mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'delete from '$table' where timestamp < date_sub(UTC_TIMESTAMP, INTERVAL '$CLEANUP_DAYS' DAY)'
+    done < <(mysql -h database -u $GRAFANA_USER -D $GRAFANA_DATABASE -N -B -e 'show tables')
+}
+
 function check_pokemon () {
     pokemon=$(export MYSQL_PWD=${SCANNER_PASSWORD}; mysql -h ${SCANNER_HOST} -u ${SCANNER_USER} -D ${SCANNER_DATABASE} -N -B -e "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP()")
     echo "$(date +'%F %T') | Current Pokémon: $pokemon"
@@ -30,6 +39,7 @@ function check_spawnpoints () {
 }
 
 while(true); do
+    cleanup
     sleep 40
     check_pokemon
     sleep 5
