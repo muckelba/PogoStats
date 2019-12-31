@@ -36,7 +36,7 @@ services:
         environment: 
             GRAFANA_DATABASE: ${MYSQL_DATABASE}
             GRAFANA_USER: ${MYSQL_USER}
-            GRAFANA_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_PWD: ${MYSQL_PASSWORD}
             SCANNER_HOST: ${SCANNER_HOST}
             SCANNER_USER: ${SCANNER_USER}
             SCANNER_PASSWORD: ${SCANNER_PASSWORD}
