@@ -4,7 +4,7 @@ function cleanup() {
     echo "$(date +'%F %T') | Starting Cleanup... "
     while read -r table; do
 	    mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'delete from '"$table"' where timestamp < date_sub(UTC_TIMESTAMP, INTERVAL '"$CLEANUP_DAYS"' DAY)'
-    done < <(mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'show tables')
+    done < <(mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'SHOW TABLES LIKE "%_data"')
 }
 
 function check_pokemon () {
@@ -13,10 +13,22 @@ function check_pokemon () {
     mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'INSERT INTO pokemon_data(timestamp,value) VALUES(now(),"'"$pokemon"'")'
 }
 
+function check_iv () {
+    iv=$(export MYSQL_PWD="${SCANNER_PASSWORD}"; mysql -h "${SCANNER_HOST}" -u "${SCANNER_USER}" -D "${SCANNER_DATABASE}" -N -B -e "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP() AND individual_attack IS NOT NULL")
+    echo "$(date +'%F %T') | Current Pokémon with IV: $iv"
+    mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'INSERT INTO iv_data(timestamp,value) VALUES(now(),"'"$iv"'")'
+}
+
 function check_quests () {
     quests=$(export MYSQL_PWD="${SCANNER_PASSWORD}"; mysql -h "${SCANNER_HOST}" -u "${SCANNER_USER}" -D "${SCANNER_DATABASE}" -N -B -e "SELECT COUNT(*) FROM trs_quest WHERE FROM_UNIXTIME(quest_timestamp) > CURDATE()")
     echo "$(date +'%F %T') | Current Quests: $quests"
     mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'INSERT INTO quest_data(timestamp,value) VALUES(now(),"'"$quests"'")'
+}
+
+function check_tr () {
+    tr=$(export MYSQL_PWD="${SCANNER_PASSWORD}"; mysql -h "${SCANNER_HOST}" -u "${SCANNER_USER}" -D "${SCANNER_DATABASE}" -N -B -e "SELECT COUNT(*) FROM pokestop WHERE incident_expiration > UTC_TIMESTAMP()")
+    echo "$(date +'%F %T') | Current Team GO Rocket Stops: $tr"
+    mysql -h database -u "$GRAFANA_USER" -D "$GRAFANA_DATABASE" -N -B -e 'INSERT INTO tr_data(timestamp,value) VALUES(now(),"'"$tr"'")'
 }
 
 function check_raids () {
@@ -33,11 +45,15 @@ function check_spawnpoints () {
 }
 
 while(true); do
+    sleep 30
     cleanup
-    sleep 40
     check_pokemon
     sleep 5
+    check_iv
+    sleep 5
     check_quests
+    sleep 5
+    check_tr
     sleep 5
     check_raids
     sleep 5

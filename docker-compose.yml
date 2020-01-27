@@ -42,3 +42,18 @@ services:
             SCANNER_PASSWORD: ${SCANNER_PASSWORD}
             SCANNER_DATABASE: ${SCANNER_DATABASE}
             CLEANUP_DAYS: ${CLEANUP_DAYS}
+
+    status:
+        build: 
+            context: .
+            dockerfile: Dockerfile.python
+        environment: 
+            GRAFANA_DATABASE: ${MYSQL_DATABASE}
+            GRAFANA_USER: ${MYSQL_USER}
+            GRAFANA_PASSWORD: ${MYSQL_PASSWORD}
+            SCANNER_HOST: ${SCANNER_HOST}
+            SCANNER_USER: ${SCANNER_USER}
+            SCANNER_PASSWORD: ${SCANNER_PASSWORD}
+            SCANNER_DATABASE: ${SCANNER_DATABASE}
+
+    
