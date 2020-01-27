@@ -44,19 +44,3 @@ services:
             STATUS_DOWN: ${STATUS_DOWN}
             CLEANUP_DAYS: ${CLEANUP_DAYS}
 
-            #    status:
-            #        build: 
-            #            context: .
-            #            dockerfile: Dockerfile.python
-            #        volumes:
-            #            - ${MYSQL_SOCK}:/run/mysqld/mysqld.sock
-            #        environment: 
-            #            GRAFANA_DATABASE: ${MYSQL_DATABASE}
-            #            GRAFANA_USER: ${MYSQL_USER}
-            #            GRAFANA_PASSWORD: ${MYSQL_PASSWORD}
-            #            SCANNER_HOST: ${SCANNER_HOST}
-            #            SCANNER_USER: ${SCANNER_USER}
-            #            SCANNER_PASSWORD: ${SCANNER_PASSWORD}
-            #            SCANNER_DATABASE: ${SCANNER_DATABASE}
-
-    

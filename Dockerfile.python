@@ -1,8 +1,0 @@
-FROM python:3.8.0-slim-buster
-
-## install requirements
-RUN pip3 install pymysql
-
-ADD WriteStatus2DB.py /root/status.py
-
-CMD ["python3",  "/root/status.py"]
