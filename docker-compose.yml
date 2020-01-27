@@ -7,7 +7,7 @@ services:
             - ./grafana_data:/var/lib/grafana
             - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
             - ./grafana/dashboard.yaml:/etc/grafana/provisioning/dashboards/dashboard.yaml
-            - ./grafana/default_dashboard.json:/etc/grafana/provisioning/dashboards/default_dashboard.json
+            - ./grafana/dashboards/:/etc/grafana/provisioning/dashboards/
         environment: 
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_USER: ${MYSQL_USER}
@@ -41,19 +41,22 @@ services:
             SCANNER_USER: ${SCANNER_USER}
             SCANNER_PASSWORD: ${SCANNER_PASSWORD}
             SCANNER_DATABASE: ${SCANNER_DATABASE}
+            STATUS_DOWN: ${STATUS_DOWN}
             CLEANUP_DAYS: ${CLEANUP_DAYS}
 
-    status:
-        build: 
-            context: .
-            dockerfile: Dockerfile.python
-        environment: 
-            GRAFANA_DATABASE: ${MYSQL_DATABASE}
-            GRAFANA_USER: ${MYSQL_USER}
-            GRAFANA_PASSWORD: ${MYSQL_PASSWORD}
-            SCANNER_HOST: ${SCANNER_HOST}
-            SCANNER_USER: ${SCANNER_USER}
-            SCANNER_PASSWORD: ${SCANNER_PASSWORD}
-            SCANNER_DATABASE: ${SCANNER_DATABASE}
+            #    status:
+            #        build: 
+            #            context: .
+            #            dockerfile: Dockerfile.python
+            #        volumes:
+            #            - ${MYSQL_SOCK}:/run/mysqld/mysqld.sock
+            #        environment: 
+            #            GRAFANA_DATABASE: ${MYSQL_DATABASE}
+            #            GRAFANA_USER: ${MYSQL_USER}
+            #            GRAFANA_PASSWORD: ${MYSQL_PASSWORD}
+            #            SCANNER_HOST: ${SCANNER_HOST}
+            #            SCANNER_USER: ${SCANNER_USER}
+            #            SCANNER_PASSWORD: ${SCANNER_PASSWORD}
+            #            SCANNER_DATABASE: ${SCANNER_DATABASE}
 
     
