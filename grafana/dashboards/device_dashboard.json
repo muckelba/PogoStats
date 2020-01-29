@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1580137408181,
+  "iteration": 1580290191712,
   "links": [],
   "panels": [
     {
@@ -35,22 +34,7 @@
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -58,35 +42,65 @@
         "y": 1
       },
       "id": 2,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "title": "$device",
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": "device",
       "repeatDirection": "h",
       "scopedVars": {
@@ -96,15 +110,6 @@
           "value": "g2"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -145,49 +150,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "title": "",
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -195,38 +165,67 @@
         "y": 1
       },
       "id": 78,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -235,15 +234,6 @@
           "value": "moto02"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -284,49 +274,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -334,38 +289,67 @@
         "y": 1
       },
       "id": 79,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -374,15 +358,6 @@
           "value": "moto07"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -423,49 +398,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -473,38 +413,67 @@
         "y": 1
       },
       "id": 80,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -513,15 +482,6 @@
           "value": "moto08"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -562,49 +522,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -612,38 +537,67 @@
         "y": 1
       },
       "id": 81,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -652,15 +606,6 @@
           "value": "s7"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -701,49 +646,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -751,38 +661,67 @@
         "y": 1
       },
       "id": 82,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -791,15 +730,6 @@
           "value": "s71"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -840,49 +770,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -890,38 +785,67 @@
         "y": 5
       },
       "id": 83,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -930,15 +854,6 @@
           "value": "s72"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -979,49 +894,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1029,38 +909,67 @@
         "y": 5
       },
       "id": 84,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1069,15 +978,6 @@
           "value": "samsung00"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1118,49 +1018,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1168,38 +1033,67 @@
         "y": 5
       },
       "id": 85,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1208,15 +1102,6 @@
           "value": "samsung01"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1257,49 +1142,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1307,38 +1157,67 @@
         "y": 5
       },
       "id": 86,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1347,15 +1226,6 @@
           "value": "samsung02"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1396,49 +1266,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1446,38 +1281,67 @@
         "y": 5
       },
       "id": 87,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1486,15 +1350,6 @@
           "value": "samsung03"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1535,49 +1390,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1585,38 +1405,67 @@
         "y": 5
       },
       "id": 88,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1625,15 +1474,6 @@
           "value": "tv01"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1674,49 +1514,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1724,38 +1529,67 @@
         "y": 9
       },
       "id": 89,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1764,15 +1598,6 @@
           "value": "tv02"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1813,49 +1638,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -1863,38 +1653,67 @@
         "y": 9
       },
       "id": 90,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1903,15 +1722,6 @@
           "value": "tv03"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -1952,49 +1762,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2002,38 +1777,67 @@
         "y": 9
       },
       "id": 91,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2042,15 +1846,6 @@
           "value": "tv04"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2091,49 +1886,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2141,38 +1901,67 @@
         "y": 9
       },
       "id": 92,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2181,15 +1970,6 @@
           "value": "tv05"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2230,49 +2010,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2280,38 +2025,67 @@
         "y": 9
       },
       "id": 93,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2320,15 +2094,6 @@
           "value": "tv06"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2369,49 +2134,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2419,38 +2149,67 @@
         "y": 9
       },
       "id": 94,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2459,15 +2218,6 @@
           "value": "tv07"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2508,49 +2258,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2558,38 +2273,67 @@
         "y": 13
       },
       "id": 95,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2598,15 +2342,6 @@
           "value": "tv08"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2647,49 +2382,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2697,38 +2397,67 @@
         "y": 13
       },
       "id": 96,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2737,15 +2466,6 @@
           "value": "tv15"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2786,49 +2506,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2836,38 +2521,67 @@
         "y": 13
       },
       "id": 97,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2876,15 +2590,6 @@
           "value": "tv16"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -2925,49 +2630,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -2975,38 +2645,67 @@
         "y": 13
       },
       "id": 98,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -3015,15 +2714,6 @@
           "value": "tv17"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -3064,49 +2754,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -3114,38 +2769,67 @@
         "y": 13
       },
       "id": 99,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -3154,15 +2838,6 @@
           "value": "tv18"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -3203,49 +2878,14 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
       "datasource": null,
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
         "h": 4,
         "w": 4,
@@ -3253,38 +2893,67 @@
         "y": 13
       },
       "id": 100,
-      "interval": null,
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
       "maxPerRow": 6,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "options": {},
-      "postfix": "",
-      "postfixFontSize": "30%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580137408181,
+      "repeatIteration": 1580290191712,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -3293,15 +2962,6 @@
           "value": "tv19"
         }
       },
-      "sparkline": {
-        "fillColor": "#3274D9",
-        "full": false,
-        "lineColor": "#5794F2",
-        "show": true,
-        "ymax": 1,
-        "ymin": null
-      },
-      "tableColumn": "",
       "targets": [
         {
           "format": "time_series",
@@ -3342,30 +3002,10 @@
           ]
         }
       ],
-      "thresholds": "1,0.5",
       "timeFrom": null,
       "timeShift": null,
       "title": "$device",
-      "type": "singlestat",
-      "valueFontSize": "70%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        },
-        {
-          "op": "=",
-          "text": "UP",
-          "value": "1"
-        },
-        {
-          "op": "=",
-          "text": "DOWN",
-          "value": "0"
-        }
-      ],
-      "valueName": "current"
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -3504,7 +3144,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 21,
+  "schemaVersion": 22,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -3559,5 +3199,5 @@
   "timezone": "",
   "title": "Device Status",
   "uid": "wKjPiEsWk",
-  "version": 1
+  "version": 5
 }
