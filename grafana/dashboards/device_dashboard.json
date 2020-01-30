@@ -15,9 +15,384 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1580290191712,
+  "iteration": 1580387736814,
   "links": [],
   "panels": [
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 80,
+      "links": [],
+      "maxPerRow": 6,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "title": "$device",
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1580387736814,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "device": {
+          "selected": false,
+          "text": "moto08",
+          "value": "moto08"
+        }
+      },
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "device_data",
+          "timeColumn": "timestamp",
+          "timeColumnType": "datetime",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "varchar",
+              "name": "",
+              "params": [
+                "device",
+                "=",
+                "$device"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
+      "id": 81,
+      "links": [],
+      "maxPerRow": 6,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "title": "$device",
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1580387736814,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "device": {
+          "selected": false,
+          "text": "s7",
+          "value": "s7"
+        }
+      },
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "device_data",
+          "timeColumn": "timestamp",
+          "timeColumnType": "datetime",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "varchar",
+              "name": "",
+              "params": [
+                "device",
+                "=",
+                "$device"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 82,
+      "links": [],
+      "maxPerRow": 6,
+      "options": {
+        "colorMode": "background",
+        "fieldOptions": {
+          "calcs": [
+            "last"
+          ],
+          "defaults": {
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              },
+              {
+                "id": 1,
+                "op": "=",
+                "text": "UP",
+                "type": 1,
+                "value": "1"
+              },
+              {
+                "id": 2,
+                "op": "=",
+                "text": "DOWN",
+                "type": 1,
+                "value": "0"
+              }
+            ],
+            "max": 2,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "dark-red",
+                  "value": null
+                },
+                {
+                  "color": "rgb(31, 214, 77)",
+                  "value": 0.5
+                }
+              ]
+            },
+            "title": "$device",
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.6.0",
+      "repeat": null,
+      "repeatDirection": "h",
+      "repeatIteration": 1580387736814,
+      "repeatPanelId": 2,
+      "scopedVars": {
+        "device": {
+          "selected": false,
+          "text": "s71",
+          "value": "s71"
+        }
+      },
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "table": "device_data",
+          "timeColumn": "timestamp",
+          "timeColumnType": "datetime",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "varchar",
+              "name": "",
+              "params": [
+                "device",
+                "=",
+                "$device"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "stat"
+    },
     {
       "collapsed": false,
       "datasource": null,
@@ -25,7 +400,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 4
       },
       "id": 52,
       "panels": [],
@@ -39,7 +414,7 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 1
+        "y": 5
       },
       "id": 2,
       "links": [],
@@ -162,9 +537,9 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 1
+        "y": 5
       },
-      "id": 78,
+      "id": 103,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -213,6 +588,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -225,7 +601,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -276,7 +652,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -286,9 +662,9 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 1
+        "y": 5
       },
-      "id": 79,
+      "id": 104,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -337,6 +713,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -349,7 +726,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -400,7 +777,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -410,9 +787,9 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 1
+        "y": 5
       },
-      "id": 80,
+      "id": 105,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -461,6 +838,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -473,7 +851,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -524,7 +902,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -534,9 +912,9 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 1
+        "y": 5
       },
-      "id": 81,
+      "id": 106,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -585,6 +963,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -597,7 +976,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -648,7 +1027,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -658,9 +1037,9 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 1
+        "y": 5
       },
-      "id": 82,
+      "id": 107,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -709,6 +1088,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -721,7 +1101,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -772,7 +1152,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -782,9 +1162,9 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 5
+        "y": 9
       },
-      "id": 83,
+      "id": 108,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -833,6 +1213,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -845,7 +1226,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -896,7 +1277,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -906,9 +1287,9 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 5
+        "y": 9
       },
-      "id": 84,
+      "id": 109,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -957,6 +1338,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -969,7 +1351,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1020,7 +1402,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1030,9 +1412,9 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 5
+        "y": 9
       },
-      "id": 85,
+      "id": 110,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1081,6 +1463,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1093,7 +1476,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1144,7 +1527,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1154,9 +1537,9 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 5
+        "y": 9
       },
-      "id": 86,
+      "id": 111,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1205,6 +1588,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1217,7 +1601,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1268,7 +1652,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1278,9 +1662,9 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 5
+        "y": 9
       },
-      "id": 87,
+      "id": 112,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1329,6 +1713,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1341,7 +1726,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1392,7 +1777,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1402,9 +1787,9 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 5
+        "y": 9
       },
-      "id": 88,
+      "id": 113,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1453,6 +1838,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1465,7 +1851,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1516,7 +1902,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1526,9 +1912,9 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 9
+        "y": 13
       },
-      "id": 89,
+      "id": 114,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1577,6 +1963,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1589,7 +1976,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1640,7 +2027,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1650,9 +2037,9 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 9
+        "y": 13
       },
-      "id": 90,
+      "id": 115,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1701,6 +2088,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1713,7 +2101,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1764,7 +2152,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1774,9 +2162,9 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 9
+        "y": 13
       },
-      "id": 91,
+      "id": 116,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1825,6 +2213,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1837,7 +2226,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -1888,7 +2277,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -1898,9 +2287,9 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 9
+        "y": 13
       },
-      "id": 92,
+      "id": 117,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -1949,6 +2338,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -1961,7 +2351,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2012,7 +2402,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2022,9 +2412,9 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 9
+        "y": 13
       },
-      "id": 93,
+      "id": 118,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2073,6 +2463,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2085,7 +2476,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2136,7 +2527,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2146,9 +2537,9 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 9
+        "y": 13
       },
-      "id": 94,
+      "id": 119,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2197,6 +2588,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2209,7 +2601,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2260,7 +2652,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2270,9 +2662,9 @@
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 13
+        "y": 17
       },
-      "id": 95,
+      "id": 120,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2321,6 +2713,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2333,7 +2726,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2384,7 +2777,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2394,9 +2787,9 @@
         "h": 4,
         "w": 4,
         "x": 4,
-        "y": 13
+        "y": 17
       },
-      "id": 96,
+      "id": 121,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2445,6 +2838,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2457,7 +2851,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2508,7 +2902,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2518,9 +2912,9 @@
         "h": 4,
         "w": 4,
         "x": 8,
-        "y": 13
+        "y": 17
       },
-      "id": 97,
+      "id": 122,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2569,6 +2963,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2581,7 +2976,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2632,7 +3027,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2642,9 +3037,9 @@
         "h": 4,
         "w": 4,
         "x": 12,
-        "y": 13
+        "y": 17
       },
-      "id": 98,
+      "id": 123,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2693,6 +3088,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2705,7 +3101,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2756,7 +3152,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2766,9 +3162,9 @@
         "h": 4,
         "w": 4,
         "x": 16,
-        "y": 13
+        "y": 17
       },
-      "id": 99,
+      "id": 124,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2817,6 +3213,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2829,7 +3226,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -2880,7 +3277,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -2890,9 +3287,9 @@
         "h": 4,
         "w": 4,
         "x": 20,
-        "y": 13
+        "y": 17
       },
-      "id": 100,
+      "id": 125,
       "links": [],
       "maxPerRow": 6,
       "options": {
@@ -2941,6 +3338,7 @@
                 }
               ]
             },
+            "title": "$device",
             "unit": "none"
           },
           "overrides": [],
@@ -2953,7 +3351,7 @@
       "pluginVersion": "6.6.0",
       "repeat": null,
       "repeatDirection": "h",
-      "repeatIteration": 1580290191712,
+      "repeatIteration": 1580387736814,
       "repeatPanelId": 2,
       "scopedVars": {
         "device": {
@@ -3004,7 +3402,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$device",
+      "title": "",
       "type": "stat"
     },
     {
@@ -3014,7 +3412,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 21
       },
       "id": 77,
       "panels": [],
@@ -3034,7 +3432,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 22
       },
       "hiddenSeries": false,
       "id": 27,
@@ -3141,6 +3539,149 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "Count of timestamps where the device was marked as UP.",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "hiddenSeries": false,
+      "id": 102,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.6.0",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [
+            {
+              "params": [
+                "device"
+              ],
+              "type": "column"
+            }
+          ],
+          "metricColumn": "device",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  device AS metric,\n  SUM(value=\"1\") AS \"value\"\nFROM device_data\nWHERE\n  $__timeFilter(timestamp)\nGROUP BY device,2\nORDER BY device",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              },
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "table": "device_data",
+          "timeColumn": "timestamp",
+          "timeColumnType": "datetime",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "int",
+              "name": "",
+              "params": [
+                "value",
+                "=",
+                "'1'"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total Device Uptime",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "series",
+        "name": null,
+        "show": true,
+        "values": [
+          "total"
+        ]
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Uptime",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": true,
+        "alignLevel": null
+      }
     }
   ],
   "refresh": "1m",
@@ -3179,7 +3720,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -3199,5 +3740,5 @@
   "timezone": "",
   "title": "Device Status",
   "uid": "wKjPiEsWk",
-  "version": 5
+  "version": 6
 }
