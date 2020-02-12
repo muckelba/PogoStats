@@ -60,7 +60,7 @@ Grafana is the tool to visualize the collected data. It comes with a preconfigur
 
 ## Updating 
 
-Updating this tool is a multi step process. First you need to update the git with  `git pull`. Second step is to re-build the container. Stop your current containers with `docker-compose down` and start and build the new ones with `docker-compose up --build`. When every container is running again, you may need to update the DB by hand since this tool does not have some sort of automatism to do that automatically. Every SQL update is basically a file in the sql directory. Check your current version with the `VERSION` file in the base directory and import the missing versions one by one via the commandline: `docker exec -i pogostats_database_1 mysql -u grafana -pchangeme grafana < sql/02_update.sql` for example. Make sure to adjust the mysql commandline parameters of course.
+Updating this tool is a multi step process. First you need to update the git with  `git pull`. Compare your `.env` with `.env.example` and adjust it when needed. Third econd step is to re-build the container. Stop your current containers with `docker-compose down` and start and build the new ones with `docker-compose up --build`. When every container is running again, you may need to update the DB by hand since this tool does not have some sort of automatism to do that automatically. Every SQL update is basically a file in the sql directory. Check your current version with the `VERSION` file in the base directory and import the missing versions one by one via the commandline: `docker exec -i pogostats_database_1 mysql -u grafana -pchangeme grafana < sql/02_update.sql` for example. Make sure to adjust the mysql commandline parameters of course.
 
 
 ## Extras
