@@ -56,7 +56,7 @@ function check_tr () {
 }
 
 function check_devices () {
-    if [ $SCANNER_TYPE == "MAD"]; then
+    if [ $SCANNER_TYPE == "MAD" ]; then
         echo "$(date +'%F %T') | Checking device status..."
         while read -r device; do
             timestamps=$(scanner_sql 'SELECT UNIX_TIMESTAMP(lastProtoDateTime), currentSleepTime FROM trs_status WHERE device_id="'"$device"'"')
