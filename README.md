@@ -28,6 +28,8 @@ mkdir grafana_data && chown 472:472 grafana_data/
 
 3. Start
 
+Use ´-d´ to run the containers in the background.
+
 ```bash
 docker-compose up
 ```
@@ -60,7 +62,12 @@ Grafana is the tool to visualize the collected data. It comes with a preconfigur
 
 ## Updating 
 
-Updating this tool is a multi step process. First you need to update the git with  `git pull`. Compare your `.env` with `.env.example` and adjust it when needed. Third step is to update the containers. Stop your current containers with `docker-compose down`, re-build the monitoring container with `docker-compose build app` and update the other containers with `docker-compose pull`. Start the containers again: `docker-compose up`. You may need to update the DB by hand since this tool does not have some sort of automatism to do that automatically. Every SQL update is basically a file in the sql directory. Check your current version with the `VERSION` file in the base directory and import the missing versions one by one via the commandline: `docker exec -i pogostats_database_1 mysql -u grafana -pchangeme grafana < sql/02_update.sql` for example. Make sure to adjust the mysql commandline parameters of course.
+Updating this tool is a multi step process:
+
+1. Update the git with  `git pull`
+2. Compare your `.env` with `.env.example` and adjust it when needed
+3. Update the containers. Stop your current containers with `docker-compose down`, re-build the monitoring container with `docker-compose build app` and update the other containers with `docker-compose pull`
+4. Start the containers again with `docker-compose up`. You may need to update the DB by hand since this tool does not have some sort of automatism to do that automatically. Every SQL update is basically a file in the sql directory. Check your current version with the `VERSION` file in the base directory and import the missing versions one by one via the commandline: `docker exec -i pogostats_database_1 mysql -u grafana -pchangeme grafana < sql/02_update.sql` for example. Make sure to adjust the mysql commandline parameters of course.
 
 
 ## Extras
