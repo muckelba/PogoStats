@@ -16,58 +16,83 @@ function cleanup() {
 }
 
 function check_pokemon () {
-    pokemon=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP()")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        pokemon=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP()")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        pokemon=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE expire_timestamp > UNIX_TIMESTAMP()")
+    fi
     echo "$(date +'%F %T') | Current Pokémon: $pokemon"
     grafana_sql 'INSERT INTO pokemon_data(timestamp,value) VALUES(now(),"'"$pokemon"'")'
 }
 
 function check_iv () {
-    iv=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP() AND individual_attack IS NOT NULL")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        iv=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP() AND individual_attack IS NOT NULL")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        iv=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE expire_timestamp > UNIX_TIMESTAMP() AND iv IS NOT NULL")
+    fi
     echo "$(date +'%F %T') | Current Pokémon with IV: $iv"
     grafana_sql 'INSERT INTO iv_data(timestamp,value) VALUES(now(),"'"$iv"'")'
 }
 
 function check_quests () {
-    quests=$(scanner_sql "SELECT COUNT(*) FROM trs_quest WHERE FROM_UNIXTIME(quest_timestamp) > CURDATE()")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        quests=$(scanner_sql "SELECT COUNT(*) FROM trs_quest WHERE FROM_UNIXTIME(quest_timestamp) > CURDATE()")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        quests=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE quest_type is not null")
+    fi
     echo "$(date +'%F %T') | Current Quests: $quests"
     grafana_sql 'INSERT INTO quest_data(timestamp,value) VALUES(now(),"'"$quests"'")'
 }
 
 function check_tr () {
-    tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE incident_expiration > UTC_TIMESTAMP()")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE incident_expiration > UTC_TIMESTAMP()")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE grunt_type is not null")
+    fi
     echo "$(date +'%F %T') | Current Team GO Rocket Stops: $tr"
     grafana_sql 'INSERT INTO tr_data(timestamp,value) VALUES(now(),"'"$tr"'")'
 }
 
 function check_devices () {
-     echo "$(date +'%F %T') | Checking device status..."
-     while read -r device; do
-     	timestamps=$(scanner_sql 'SELECT UNIX_TIMESTAMP(lastProtoDateTime), currentSleepTime FROM trs_status WHERE device_id="'"$device"'"')
-        devicename=$(scanner_sql 'SELECT name FROM settings_device WHERE device_id="'"$device"'"')
-	now=$(date '+%s')
-	array=($(for i in $timestamps; do echo $i; done))
-	lastData=${array[0]}
-	sleepTime=${array[1]}
-        if [[ $lastData -lt $((now-${STATUS_DOWN}-$sleepTime)) ]]; then
-            currentStatus="0"
-	    echo "$(date +'%F %T') | Device $devicename offline"
-        else
-            currentStatus="1"
-        fi
-        grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
-     done < <(scanner_sql "SELECT device_id FROM trs_status;")
+    if [ $SCANNER_TYPE == "MAD"]; then
+        echo "$(date +'%F %T') | Checking device status..."
+        while read -r device; do
+            timestamps=$(scanner_sql 'SELECT UNIX_TIMESTAMP(lastProtoDateTime), currentSleepTime FROM trs_status WHERE device_id="'"$device"'"')
+            devicename=$(scanner_sql 'SELECT name FROM settings_device WHERE device_id="'"$device"'"')
+        now=$(date '+%s')
+        array=($(for i in $timestamps; do echo $i; done))
+        lastData=${array[0]}
+        sleepTime=${array[1]}
+            if [[ $lastData -lt $((now-${STATUS_DOWN}-$sleepTime)) ]]; then
+                currentStatus="0"
+            echo "$(date +'%F %T') | Device $devicename offline"
+            else
+                currentStatus="1"
+            fi
+            grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
+        done < <(scanner_sql "SELECT device_id FROM trs_status;")
+    fi
 }
 
-
 function check_raids () {
-    raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN level=5 THEN 1 ELSE 0 END) level5 FROM raid WHERE end > UTC_TIMESTAMP()")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN level=5 THEN 1 ELSE 0 END) level5 FROM raid WHERE end > UTC_TIMESTAMP()")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN raid_level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN raid_level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN raid_level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN raid_level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN raid_level=5 THEN 1 ELSE 0 END) level5 FROM gym WHERE raid_end_timestamp > UNIX_TIMESTAMP()")
+    fi
     array=($(for i in $raids; do echo $i; done))
     echo "$(date +'%F %T') | Current total Raids: ${array[0]}"
     grafana_sql 'INSERT INTO raid_data(timestamp,raids_total,raids_1,raids_2,raids_3,raids_4,raids_5) VALUES(now(),'${array[0]}','${array[1]}','${array[2]}','${array[3]}','${array[4]}','${array[5]}')'
 }
 
 function check_spawnpoints () {
-    spawnpoints=$(scanner_sql "select count(*) from trs_spawn where calc_endminsec is null and first_detection > DATE_SUB(now(), INTERVAL 24 HOUR);")
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        spawnpoints=$(scanner_sql "select count(*) from trs_spawn where calc_endminsec is null and first_detection > DATE_SUB(now(), INTERVAL 24 HOUR);")
+    elif [ $SCANNER_TYPE == "RDM"]; then
+        spawnpoints=$(scanner_sql "select count(*) from spawnpoint where despawn_sec is null and updated < DATE_SUB(now(), INTERVAL 24 HOUR);")
+    fi
     echo "$(date +'%F %T') | Unknown Spanwpoints in the last 24h: $spawnpoints"
     grafana_sql 'INSERT INTO spawnpoint_data(timestamp,value) VALUES(now(),"'"$spawnpoints"'")'
 }

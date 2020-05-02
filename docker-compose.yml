@@ -37,6 +37,7 @@ services:
             GRAFANA_DATABASE: ${MYSQL_DATABASE}
             GRAFANA_USER: ${MYSQL_USER}
             MYSQL_PWD: ${MYSQL_PASSWORD}
+            SCANNER_TYPE: ${SCANNER_TYPE}
             SCANNER_HOST: ${SCANNER_HOST}
             SCANNER_PORT: ${SCANNER_PORT}
             SCANNER_USER: ${SCANNER_USER}
