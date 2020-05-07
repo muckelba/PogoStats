@@ -18,7 +18,7 @@ function cleanup() {
 function check_pokemon () {
     if [ $SCANNER_TYPE == "MAD" ]; then
         pokemon=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP()")
-    elif [ $SCANNER_TYPE == "RDM"]; then
+    elif [ $SCANNER_TYPE == "RDM" ]; then
         pokemon=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE expire_timestamp > UNIX_TIMESTAMP()")
     fi
     echo "$(date +'%F %T') | Current Pokémon: $pokemon"
@@ -28,7 +28,7 @@ function check_pokemon () {
 function check_iv () {
     if [ $SCANNER_TYPE == "MAD" ]; then
         iv=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP() AND individual_attack IS NOT NULL")
-    elif [ $SCANNER_TYPE == "RDM"]; then
+    elif [ $SCANNER_TYPE == "RDM" ]; then
         iv=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE expire_timestamp > UNIX_TIMESTAMP() AND iv IS NOT NULL")
     fi
     echo "$(date +'%F %T') | Current Pokémon with IV: $iv"
@@ -38,7 +38,7 @@ function check_iv () {
 function check_quests () {
     if [ $SCANNER_TYPE == "MAD" ]; then
         quests=$(scanner_sql "SELECT COUNT(*) FROM trs_quest WHERE FROM_UNIXTIME(quest_timestamp) > CURDATE()")
-    elif [ $SCANNER_TYPE == "RDM"]; then
+    elif [ $SCANNER_TYPE == "RDM" ]; then
         quests=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE quest_type is not null")
     fi
     echo "$(date +'%F %T') | Current Quests: $quests"
@@ -48,7 +48,7 @@ function check_quests () {
 function check_tr () {
     if [ $SCANNER_TYPE == "MAD" ]; then
         tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE incident_expiration > UTC_TIMESTAMP()")
-    elif [ $SCANNER_TYPE == "RDM"]; then
+    elif [ $SCANNER_TYPE == "RDM" ]; then
         tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE grunt_type is not null")
     fi
     echo "$(date +'%F %T') | Current Team GO Rocket Stops: $tr"
@@ -56,24 +56,35 @@ function check_tr () {
 }
 
 function check_devices () {
-    if [ $SCANNER_TYPE == "MAD" ]; then
-        echo "$(date +'%F %T') | Checking device status..."
+    echo "$(date +'%F %T') | Checking device status..."
+    if [ $SCANNER_TYPE == "MAD" ]; then    
         while read -r device; do
             timestamps=$(scanner_sql 'SELECT UNIX_TIMESTAMP(lastProtoDateTime), currentSleepTime FROM trs_status WHERE device_id="'"$device"'"')
             devicename=$(scanner_sql 'SELECT name FROM settings_device WHERE device_id="'"$device"'"')
-        now=$(date '+%s')
-        array=($(for i in $timestamps; do echo $i; done))
-        lastData=${array[0]}
-        sleepTime=${array[1]}
+            now=$(date '+%s')
+            array=($(for i in $timestamps; do echo $i; done))
+            lastData=${array[0]}
+            sleepTime=${array[1]}
             if [[ $lastData -lt $((now-${STATUS_DOWN}-$sleepTime)) ]]; then
                 currentStatus="0"
-            echo "$(date +'%F %T') | Device $devicename offline"
+                echo "$(date +'%F %T') | Device $devicename offline"
             else
                 currentStatus="1"
             fi
             grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
         done < <(scanner_sql "SELECT device_id FROM trs_status;")
-    fi
+    elif [ $SCANNER_TYPE == "RDM" ]; then
+        while read -r device; do
+            lastData=$(scanner_sql 'SELECT last_seen FROM device WHERE uuid="'"$device"'"')
+            now=$(date '+%s')
+            if [[ $lastData -lt $((now-${STATUS_DOWN})) ]]; then
+                currentStatus="0"
+                echo "$(date +'%F %T') | Device $devicename offline"
+            else
+                currentStatus="1"
+            fi
+            grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
+        done < <(scanner_sql "SELECT uuid FROM device;")
 }
 
 function check_raids () {
