@@ -4,7 +4,21 @@ A mini Monitoring tool to collect performance data of Pokémon, Quests, Raids an
 
 It uses a little bash script to collect data from a Pokémon Scanning DB and write it in its own DB. [Grafana](https://grafana.com/grafana/) is used to display that data and even send notifications.
 
+Current collected stats are:
+
+- Live Pokémon
+- Live Pokémon with IV
+- Raids (split into their levels)
+- Unkown Spawnpoints
+- Quests
+- Live Team GO Rocket stops
+- Uptime Statistics for Devices
+
 ![Dashboard](https://user-images.githubusercontent.com/34460584/71187549-8ffaf100-227f-11ea-8f85-7497772b2f29.png)
+
+![Device stats overview](https://camo.githubusercontent.com/53649d2e30d477a361b4d18cd92d808ab2948a51/68747470733a2f2f696d616765732d6578742d322e646973636f72646170702e6e65742f65787465726e616c2f51457247467479536663512d32644b336770536c4e5a6c4b344576785235484a39503946356c74705745342f2533467769647468253344313434322532366865696768742533443534302f68747470732f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3530323037343830383636323632323230382f3637313339303532313835393530363139372f756e6b6e6f776e2e706e67)
+
+![Device uptime graph](https://camo.githubusercontent.com/38ad4b8268ec3e7421492218449c710a8c6ce49b/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3637323430373231343035363636393230342f3637323433333130333230353137313230382f42657a5f74797475752e706e67)
 
 ## Installation
 
