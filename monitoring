@@ -85,6 +85,7 @@ function check_devices () {
             fi
             grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
         done < <(scanner_sql "SELECT uuid FROM device;")
+    fi
 }
 
 function check_raids () {
