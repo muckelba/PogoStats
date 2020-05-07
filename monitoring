@@ -83,7 +83,7 @@ function check_devices () {
             else
                 currentStatus="1"
             fi
-            grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
+            grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$device'","'"$currentStatus"'")'
         done < <(scanner_sql "SELECT uuid FROM device;")
     fi
 }
