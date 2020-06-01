@@ -2,7 +2,12 @@ version: '3.5'
 
 services:
     grafana:
-        image: grafana/grafana
+        build:
+            context: .
+            dockerfile: Dockerfile.grafana
+            args:
+               - GF_INSTALL_IMAGE_RENDERER_PLUGIN=true
+               - GRAFANA_VERSION=latest
         volumes:
             - ./grafana_data:/var/lib/grafana
             - ./grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
