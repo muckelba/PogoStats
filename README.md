@@ -80,7 +80,7 @@ Updating this tool is a multi step process:
 
 1. Update the git with  `git pull`
 2. Compare your `.env` with `.env.example` and adjust it when needed
-3. Update the containers. Stop your current containers with `docker-compose down`, re-build the monitoring and grafana container with `docker-compose build` and update the database container with `docker-compose pull`
+3. Update the containers. Stop your current containers with `docker-compose down`, re-build the monitoring and grafana container with `docker-compose build --pull` and update the database container with `docker-compose pull`
 4. Start the containers again with `docker-compose up`. You may need to update the DB by hand since this tool does not have some sort of automatism to do that automatically. Every SQL update is basically a file in the sql directory. Check your current version with the `VERSION` file in the base directory and import the missing versions one by one via the commandline: `docker exec -i pogostats_database_1 mysql -u grafana -pchangeme grafana < sql/02_update.sql` for example. Make sure to adjust the mysql commandline parameters of course.
 
 
