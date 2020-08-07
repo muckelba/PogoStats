@@ -42,10 +42,10 @@ mkdir grafana_data && chown 472:472 grafana_data/
 
 3. Start
 
-Use ´-d´ to run the containers in the background.
+Start the containers in the background and watch the logs:
 
 ```bash
-docker-compose up
+docker-compose up -d && docker-compose logs -f
 ```
 
 ## Configuration
@@ -62,7 +62,9 @@ This is the little app container that runs the data collection. It needs access 
 
 #### Socket File
 
-You can mount the socket file of your mysql host into the app container so it feels like just connecting to `localhost`. The first step is to get the path of that file: `mysqladmin variables |grep "\.sock"`. Add that path to your .env file and change `SCANNER_HOST` to localhost and you're ready to go.
+You can mount the socket file of your mysql host into the app container so it feels like just connecting to `localhost`. The first step is to get the path of that file: `mysqladmin variables |grep "\.sock"`. Add that path to your .env file and change `SCANNER_HOST` to `localhost` and you're ready to go.
+
+> Make sure to use `localhost` and not `127.0.0.1`!
 
 #### Normal Interface (not recommended)
 
