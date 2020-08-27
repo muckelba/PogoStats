@@ -336,40 +336,6 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_2 AS \"Level 2\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
-          "refId": "C",
-          "select": [
-            [
-              {
-                "params": [
-                  "raids_2"
-                ],
-                "type": "column"
-              },
-              {
-                "params": [
-                  "Level 2"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "table": "raid_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
-        },
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
           "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_3 AS \"Level 3\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
           "refId": "D",
           "select": [
@@ -383,40 +349,6 @@
               {
                 "params": [
                   "Level 3"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "table": "raid_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            }
-          ]
-        },
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_4 AS \"Level 4\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
-          "refId": "E",
-          "select": [
-            [
-              {
-                "params": [
-                  "raids_4"
-                ],
-                "type": "column"
-              },
-              {
-                "params": [
-                  "Level 4"
                 ],
                 "type": "alias"
               }
@@ -466,7 +398,42 @@
               "type": "macro"
             }
           ]
+        },
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": false,
+          "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_6 AS \"Level 6\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
+          "refId": "F",
+          "select": [
+            [
+              {
+                "params": [
+                  "raids_6"
+                ],
+                "type": "column"
+              },
+              {
+                "params": [
+                  "Level 6"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "table": "raid_data",
+          "timeColumn": "timestamp",
+          "timeColumnType": "datetime",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
         }
+
       ],
       "thresholds": [],
       "timeFrom": null,
