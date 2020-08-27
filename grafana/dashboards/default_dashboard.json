@@ -337,7 +337,7 @@
           "metricColumn": "none",
           "rawQuery": false,
           "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_3 AS \"Level 3\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
-          "refId": "D",
+          "refId": "C",
           "select": [
             [
               {
@@ -371,7 +371,7 @@
           "metricColumn": "none",
           "rawQuery": false,
           "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_5 AS \"Level 5\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
-          "refId": "F",
+          "refId": "D",
           "select": [
             [
               {
@@ -405,7 +405,7 @@
           "metricColumn": "none",
           "rawQuery": false,
           "rawSql": "SELECT\n  timestamp AS \"time\",\n  raids_6 AS \"Level 6\"\nFROM raid_data\nWHERE\n  $__timeFilter(timestamp)\nORDER BY timestamp",
-          "refId": "F",
+          "refId": "E",
           "select": [
             [
               {
