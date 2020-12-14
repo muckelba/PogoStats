@@ -2,6 +2,7 @@ version: '3.5'
 
 services:
     grafana:
+        restart: always
         build:
             context: .
             dockerfile: Dockerfile.grafana
@@ -23,6 +24,7 @@ services:
             - "${GRAFANA_PORT}:3000"
 
     database:
+        restart: always
         image: mariadb:10.3
         volumes:
             - ./db:/var/lib/mysql
@@ -35,6 +37,7 @@ services:
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
 
     app:
+        restart: always
         build: .
         volumes:
             - ${MYSQL_SOCK}:/run/mysqld/mysqld.sock
