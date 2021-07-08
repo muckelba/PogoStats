@@ -15,8 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 82,
-  "iteration": 1625776119645,
+  "iteration": 1625776119649,
   "links": [],
   "panels": [
     {
@@ -30,6 +29,7 @@
       },
       "id": 52,
       "panels": [],
+      "repeat": null,
       "title": "Devices",
       "type": "row"
     },
@@ -41,25 +41,17 @@
           "displayName": "$device",
           "mappings": [
             {
-              "id": 0,
-              "op": "=",
-              "text": "N/A",
-              "type": 1,
-              "value": "null"
-            },
-            {
-              "id": 1,
-              "op": "=",
-              "text": "UP",
-              "type": 1,
-              "value": "1"
-            },
-            {
-              "id": 2,
-              "op": "=",
-              "text": "DOWN",
-              "type": 1,
-              "value": "0"
+              "options": {
+                "0": {
+                  "index": 1,
+                  "text": "OFFLINE"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "ONLINE"
+                }
+              },
+              "type": "value"
             }
           ],
           "max": 2,
