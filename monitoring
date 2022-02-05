@@ -5,7 +5,7 @@ function grafana_sql() {
 }
 
 function scanner_sql() {
-    export MYSQL_PWD="${SCANNER_PASSWORD}"; mysql -h "${SCANNER_HOST}" -P "${SCANNER_PORT}" -u "${SCANNER_USER}" -D "${SCANNER_DATABASE}" -N -B -e "$1"
+    export MYSQL_PWD="${SCANNER_PASSWORD}"; mysql -h "${SCANNER_HOST}" -P "${SCANNER_PORT}" --protocol "${MYSQL_CONNECTION_TYPE}" -u "${SCANNER_USER}" -D "${SCANNER_DATABASE}" -N -B -e "$1"
 }
 
 function cleanup() {
@@ -33,6 +33,16 @@ function check_iv () {
     fi
     echo "$(date +'%F %T') | Current Pokémon with IV: $iv"
     grafana_sql 'INSERT INTO iv_data(timestamp,value) VALUES(now(),"'"$iv"'")'
+}
+
+function check_nearby () {
+    if [ $SCANNER_TYPE == "MAD" ]; then
+        nearby=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE disappear_time > UTC_TIMESTAMP() AND (seen_type='nearby_cell' OR seen_type='nearby_stop')")
+    elif [ $SCANNER_TYPE == "RDM" ]; then
+        nearby=$(scanner_sql "SELECT COUNT(*) FROM pokemon WHERE expire_timestamp > UNIX_TIMESTAMP() AND (pokestop_id IS NOT NULL OR cell_id IS NOT NULL)")
+    fi
+    echo "$(date +'%F %T') | Current nearby Pokémon: $nearby"
+    grafana_sql 'INSERT INTO nearby_data(timestamp,value) VALUES(now(),"'"$nearby"'")'
 }
 
 function check_quests () {
@@ -115,6 +125,8 @@ while(true); do
     check_pokemon
     sleep 5
     check_iv
+    sleep 5
+    check_nearby
     sleep 5
     check_quests
     sleep 5

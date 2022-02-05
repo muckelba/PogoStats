@@ -7,4 +7,5 @@ datasources:
     url: database:3306
     database: $MYSQL_DATABASE
     user: $MYSQL_USER
-    password: $MYSQL_PASSWORD
+    secureJsonData:
+      password: $MYSQL_PASSWORD

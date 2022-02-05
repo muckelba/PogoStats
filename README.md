@@ -62,13 +62,13 @@ This is the little app container that runs the data collection. It needs access 
 
 #### Socket File
 
-You can mount the socket file of your mysql host into the app container so it feels like just connecting to `localhost`. The first step is to get the path of that file: `mysqladmin variables |grep "\.sock"`. Add that path to your .env file and change `SCANNER_HOST` to `localhost` and you're ready to go.
+You can mount the socket file of your mysql host into the app container so it feels like just connecting to `localhost`. The first step is to get the path of that file: `mysqladmin variables |grep "\.sock"`. Add that path to your .env file, change `SCANNER_HOST` to `localhost` and you're ready to go.
 
 > Make sure to use `localhost` and not `127.0.0.1`!
 
 #### Normal Interface (not recommended)
 
-Binding your mysql host to normal interface is usually a security concern since, if your server is accessable from the internet, everybody can access it and thats something you should always avoid. Luckily, you can adjust your iptables to grant access from docker, but from noone else. 
+Binding your mysql host to normal interface is usually a security concern since, if your server is accessable from the internet, everybody can access it and thats something you should always avoid. Luckily, you can adjust your iptables to grant access from docker, but from noone else. **Make sure to change `MYSQL_CONNECTION_TYPE` to `tcp` in the .env file!**
 
 > If you are running your scanner in docker, you can just share the network to the other container.
 
