@@ -3,6 +3,7 @@ apiVersion: 1
 datasources:
   - name: MySQL
     isDefault: true
+    uid: 000000001
     type: mysql
     url: database:3306
     database: $MYSQL_DATABASE
