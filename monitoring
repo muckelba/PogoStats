@@ -102,7 +102,7 @@ function check_raids () {
     if [ $SCANNER_TYPE == "MAD" ]; then
         raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN level=5 THEN 1 ELSE 0 END) level5, SUM(CASE WHEN level=6 THEN 1 ELSE 0 END) level6 FROM raid WHERE end > UTC_TIMESTAMP()")
     elif [ $SCANNER_TYPE == "RDM" ]; then
-        raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN raid_level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN raid_level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN raid_level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN raid_level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN raids_level=5 THEN 1 ELSE 0 END) level5, SUM(CASE WHEN raids_level=6 THEN 1 ELSE 0 END) level6  FROM gym WHERE raid_end_timestamp > UNIX_TIMESTAMP()")
+        raids=$(scanner_sql "SELECT COUNT(*) total, SUM(CASE WHEN raid_level=1 THEN 1 ELSE 0 END) level1, SUM(CASE WHEN raid_level=2 THEN 1 ELSE 0 END) level2, SUM(CASE WHEN raid_level=3 THEN 1 ELSE 0 END) level3, SUM(CASE WHEN raid_level=4 THEN 1 ELSE 0 END) level4, SUM(CASE WHEN raid_level=5 THEN 1 ELSE 0 END) level5, SUM(CASE WHEN raid_level=6 THEN 1 ELSE 0 END) level6  FROM gym WHERE raid_end_timestamp > UNIX_TIMESTAMP()")
     fi
     array=($(for i in $raids; do echo $i; done))
     echo "$(date +'%F %T') | Current total Raids: ${array[0]}"
