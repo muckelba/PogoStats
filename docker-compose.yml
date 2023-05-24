@@ -54,4 +54,3 @@ services:
             SCANNER_DATABASE: ${SCANNER_DATABASE}
             STATUS_DOWN: ${STATUS_DOWN}
             CLEANUP_DAYS: ${CLEANUP_DAYS}
-

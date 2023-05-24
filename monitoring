@@ -57,11 +57,11 @@ function check_quests () {
 
 function check_tr () {
     if [ $SCANNER_TYPE == "MAD" ]; then
-        tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE incident_expiration > UTC_TIMESTAMP()")
+        tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop_incident WHERE incident_expiration > UTC_TIMESTAMP()")
     elif [ $SCANNER_TYPE == "RDM" ]; then
         tr=$(scanner_sql "SELECT COUNT(*) FROM pokestop WHERE grunt_type is not null")
     fi
-    echo "$(date +'%F %T') | Current Team GO Rocket Stops: $tr"
+    echo "$(date +'%F %T') | Current Stops with an incident: $tr"
     grafana_sql 'INSERT INTO tr_data(timestamp,value) VALUES(now(),"'"$tr"'")'
 }
 
@@ -69,20 +69,16 @@ function check_devices () {
     echo "$(date +'%F %T') | Checking device status..."
     if [ $SCANNER_TYPE == "MAD" ]; then    
         while read -r device; do
-            timestamps=$(scanner_sql 'SELECT UNIX_TIMESTAMP(lastProtoDateTime), currentSleepTime FROM trs_status WHERE device_id="'"$device"'"')
-            devicename=$(scanner_sql 'SELECT name FROM settings_device WHERE device_id="'"$device"'"')
-            now=$(date '+%s')
-            array=($(for i in $timestamps; do echo $i; done))
-            lastData=${array[0]}
-            sleepTime=${array[1]}
-            if [[ $lastData -lt $((now-${STATUS_DOWN}-$sleepTime)) ]]; then
+            array=($(for i in $device; do echo $i; done))
+            devicename=$(scanner_sql 'SELECT name FROM settings_device WHERE device_id="'"${array[0]}"'"')
+            if [[ ${array[1]} -eq 1 ]]; then
                 currentStatus="0"
                 echo "$(date +'%F %T') | Device $devicename offline"
             else
                 currentStatus="1"
             fi
             grafana_sql 'INSERT INTO device_data(timestamp, device, value) VALUES(now(),"'$devicename'","'"$currentStatus"'")'
-        done < <(scanner_sql "SELECT device_id FROM trs_status;")
+        done < <(scanner_sql 'SELECT device_id, IF(lastProtoDateTime < UTC_TIMESTAMP() - INTERVAL '"$STATUS_DOWN"' SECOND - currentSleepTime, 1, 0) AS offline FROM trs_status')
     elif [ $SCANNER_TYPE == "RDM" ]; then
         while read -r device; do
             lastData=$(scanner_sql 'SELECT last_seen FROM device WHERE uuid="'"$device"'"')

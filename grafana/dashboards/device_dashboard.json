@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -13,605 +16,128 @@
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "iteration": 1580387736814,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 0
-      },
-      "id": 80,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "moto08",
-          "value": "moto08"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 0
-      },
-      "id": 81,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "s7",
-          "value": "s7"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 0
-      },
-      "id": 82,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "s71",
-          "value": "s71"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "mysql",
+        "uid": "000000001"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 0
       },
       "id": 52,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "000000001"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Devices",
       "type": "row"
     },
     {
-      "cacheTimeout": null,
-      "datasource": null,
+      "datasource": {
+        "type": "mysql",
+        "uid": "000000001"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "displayName": "$device",
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "max": 2,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-red",
+                "value": null
+              },
+              {
+                "color": "rgb(31, 214, 77)",
+                "value": 0.5
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byValue",
+              "options": {
+                "op": "gte",
+                "reducer": "lastNotNull",
+                "value": 0
+              }
+            },
+            "properties": [
+              {
+                "id": "noValue"
+              }
+            ]
+          }
+        ]
+      },
       "gridPos": {
         "h": 4,
         "w": 4,
         "x": 0,
-        "y": 5
+        "y": 1
       },
       "id": 2,
       "links": [],
       "maxPerRow": 6,
       "options": {
         "colorMode": "background",
-        "fieldOptions": {
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
+        "textMode": "auto"
       },
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "9.5.2",
       "repeat": "device",
       "repeatDirection": "h",
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "g2",
-          "value": "g2"
-        }
-      },
       "targets": [
         {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 5
-      },
-      "id": 103,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
+          "datasource": {
+            "type": "mysql",
+            "uid": "000000001"
           },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "moto02",
-          "value": "moto02"
-        }
-      },
-      "targets": [
-        {
           "format": "time_series",
           "group": [],
           "metricColumn": "none",
@@ -650,2772 +176,31 @@
           ]
         }
       ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 8,
-        "y": 5
-      },
-      "id": 104,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "moto07",
-          "value": "moto07"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 5
-      },
-      "id": 105,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "moto08",
-          "value": "moto08"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 5
-      },
-      "id": 106,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "s7",
-          "value": "s7"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 5
-      },
-      "id": 107,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "s71",
-          "value": "s71"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 9
-      },
-      "id": 108,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "s72",
-          "value": "s72"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 9
-      },
-      "id": 109,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "samsung00",
-          "value": "samsung00"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 8,
-        "y": 9
-      },
-      "id": 110,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "samsung01",
-          "value": "samsung01"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 9
-      },
-      "id": 111,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "samsung02",
-          "value": "samsung02"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 9
-      },
-      "id": 112,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "samsung03",
-          "value": "samsung03"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 9
-      },
-      "id": 113,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv01",
-          "value": "tv01"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 13
-      },
-      "id": 114,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv02",
-          "value": "tv02"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 13
-      },
-      "id": 115,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv03",
-          "value": "tv03"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 8,
-        "y": 13
-      },
-      "id": 116,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv04",
-          "value": "tv04"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 13
-      },
-      "id": 117,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv05",
-          "value": "tv05"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 13
-      },
-      "id": 118,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv06",
-          "value": "tv06"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 13
-      },
-      "id": 119,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv07",
-          "value": "tv07"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 17
-      },
-      "id": 120,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv08",
-          "value": "tv08"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 4,
-        "y": 17
-      },
-      "id": 121,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv15",
-          "value": "tv15"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 8,
-        "y": 17
-      },
-      "id": 122,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv16",
-          "value": "tv16"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 12,
-        "y": 17
-      },
-      "id": 123,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv17",
-          "value": "tv17"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 17
-      },
-      "id": 124,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv18",
-          "value": "tv18"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 17
-      },
-      "id": 125,
-      "links": [],
-      "maxPerRow": 6,
-      "options": {
-        "colorMode": "background",
-        "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
-          "defaults": {
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "id": 1,
-                "op": "=",
-                "text": "UP",
-                "type": 1,
-                "value": "1"
-              },
-              {
-                "id": 2,
-                "op": "=",
-                "text": "DOWN",
-                "type": 1,
-                "value": "0"
-              }
-            ],
-            "max": 2,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-red",
-                  "value": null
-                },
-                {
-                  "color": "rgb(31, 214, 77)",
-                  "value": 0.5
-                }
-              ]
-            },
-            "title": "$device",
-            "unit": "none"
-          },
-          "overrides": [],
-          "values": false
-        },
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal"
-      },
-      "pluginVersion": "6.6.0",
-      "repeat": null,
-      "repeatDirection": "h",
-      "repeatIteration": 1580387736814,
-      "repeatPanelId": 2,
-      "scopedVars": {
-        "device": {
-          "selected": false,
-          "text": "tv19",
-          "value": "tv19"
-        }
-      },
-      "targets": [
-        {
-          "format": "time_series",
-          "group": [],
-          "metricColumn": "none",
-          "rawQuery": false,
-          "rawSql": "SELECT\n  timestamp AS \"time\",\n  value\nFROM device_data\nWHERE\n  $__timeFilter(timestamp) AND\n  device = $device\nORDER BY timestamp",
-          "refId": "A",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "column"
-              }
-            ]
-          ],
-          "table": "device_data",
-          "timeColumn": "timestamp",
-          "timeColumnType": "datetime",
-          "where": [
-            {
-              "name": "$__timeFilter",
-              "params": [],
-              "type": "macro"
-            },
-            {
-              "datatype": "varchar",
-              "name": "",
-              "params": [
-                "device",
-                "=",
-                "$device"
-              ],
-              "type": "expression"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
       "type": "stat"
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "mysql",
+        "uid": "000000001"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 13
       },
       "id": 77,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "mysql",
+            "uid": "000000001"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Overview",
       "type": "row"
     },
@@ -3424,15 +209,24 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "mysql",
+        "uid": "000000001"
+      },
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 14
       },
       "hiddenSeries": false,
       "id": 27,
@@ -3451,9 +245,10 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "9.5.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3463,6 +258,10 @@
       "steppedLine": true,
       "targets": [
         {
+          "datasource": {
+            "type": "mysql",
+            "uid": "000000001"
+          },
           "format": "time_series",
           "group": [],
           "metricColumn": "device",
@@ -3498,9 +297,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Device Status",
       "tooltip": {
         "shared": true,
@@ -3509,9 +306,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -3519,25 +314,18 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -3545,15 +333,24 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": {
+        "type": "mysql",
+        "uid": "000000001"
+      },
       "description": "Count of timestamps where the device was marked as UP.",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 23
       },
       "hiddenSeries": false,
       "id": 102,
@@ -3576,10 +373,10 @@
       "linewidth": 1,
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "6.6.0",
+      "pluginVersion": "9.5.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3589,6 +386,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "mysql",
+            "uid": "000000001"
+          },
           "format": "time_series",
           "group": [
             {
@@ -3641,9 +442,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Total Device Uptime",
       "tooltip": {
         "shared": false,
@@ -3652,9 +451,7 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "series",
-        "name": null,
         "show": true,
         "values": [
           "total"
@@ -3665,44 +462,43 @@
           "format": "short",
           "label": "Uptime",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": false
         }
       ],
       "yaxis": {
-        "align": true,
-        "alignLevel": null
+        "align": true
       }
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 22,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "text": "All",
+          "selected": true,
+          "text": [
+            "All"
+          ],
           "value": [
             "$__all"
           ]
         },
-        "datasource": "MySQL",
+        "datasource": {
+          "type": "mysql",
+          "uid": "000000001"
+        },
         "definition": "SELECT DISTINCT device FROM device_data;",
         "hide": 2,
         "includeAll": true,
-        "label": null,
         "multi": true,
         "name": "device",
         "options": [],
@@ -3712,7 +508,6 @@
         "skipUrlSync": false,
         "sort": 1,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -3740,5 +535,6 @@
   "timezone": "",
   "title": "Device Status",
   "uid": "wKjPiEsWk",
-  "version": 6
+  "version": 2,
+  "weekStart": ""
 }
