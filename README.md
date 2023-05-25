@@ -1,24 +1,24 @@
 # PokéStatistics
 
-A mini Monitoring tool to collect performance data of Pokémon, Quests, Raids and Spawnpoints. 
+A mini monitoring tool to collect performance data of Pokémon, quests, raids and spawnpoints. 
 
-It uses a little bash script to collect data from a Pokémon Scanning DB and write it in its own DB. [Grafana](https://grafana.com/grafana/) is used to display that data and even send notifications.
+It uses a little bash script to collect data from a Pokémon scanning DB and write it in its own DB. [Grafana](https://grafana.com/grafana/) is used to display that data and even send notifications.
 
 Current collected stats are:
 
 - Live Pokémon
 - Live Pokémon with IV
 - Raids (split into their levels)
-- Unkown Spawnpoints
+- Unkown spawnpoints
 - Quests
-- Live Team GO Rocket stops
-- Uptime Statistics for Devices
+- Pokéstops with incidents
+- Uptime statistics for devices
 
-![Dashboard](https://user-images.githubusercontent.com/34460584/71187549-8ffaf100-227f-11ea-8f85-7497772b2f29.png)
+![Dashboard](https://github.com/muckelba/PogoStats/assets/34460584/a630c726-614d-4cd4-9c7b-5876363b9e1c)
 
-![Device stats overview](https://camo.githubusercontent.com/53649d2e30d477a361b4d18cd92d808ab2948a51/68747470733a2f2f696d616765732d6578742d322e646973636f72646170702e6e65742f65787465726e616c2f51457247467479536663512d32644b336770536c4e5a6c4b344576785235484a39503946356c74705745342f2533467769647468253344313434322532366865696768742533443534302f68747470732f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3530323037343830383636323632323230382f3637313339303532313835393530363139372f756e6b6e6f776e2e706e67)
+![Device stats overview](https://github.com/muckelba/PogoStats/assets/34460584/d4c5b11a-c5cb-48cd-b626-ff38e06ebeb4)
 
-![Device uptime graph](https://camo.githubusercontent.com/38ad4b8268ec3e7421492218449c710a8c6ce49b/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3637323430373231343035363636393230342f3637323433333130333230353137313230382f42657a5f74797475752e706e67)
+![Device uptime graph](https://github.com/muckelba/PogoStats/assets/34460584/74d4dab2-8bda-4b56-a982-149fd092bb14)
 
 ## Installation
 
@@ -90,7 +90,7 @@ Updating this tool is a multi step process:
 
 ### Notifications
 
-Grafana is able to send messages when a alert is triggered. Set up a notification channel in the Alerting menu on the left side. To recive notifications, you either need to set that notification channel to default or add that channel to the alerting section of the dashboard settings. You need to set the `$GF_SERVER_DOMAIN` variable if you want pictures in your notifications.
+Grafana is able to send messages when a alert is triggered. Set up a notification channel in the alerting menu on the left side. To recive notifications, you either need to set that notification channel to default or add that channel to the alerting section of the dashboard settings. You need to set the `$GF_SERVER_DOMAIN` variable if you want pictures in your notifications.
 
 ### SSL
 
