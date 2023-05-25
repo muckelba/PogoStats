@@ -14,7 +14,7 @@ Current collected stats are:
 - Pokéstops with incidents
 - Uptime statistics for devices
 
-![Dashboard](https://github.com/muckelba/PogoStats/assets/34460584/a630c726-614d-4cd4-9c7b-5876363b9e1c)
+![Dashboard](https://github.com/muckelba/PogoStats/assets/34460584/4ec51caa-69f8-4d4e-80e0-0cd7d3897d6f)
 
 ![Device stats overview](https://github.com/muckelba/PogoStats/assets/34460584/d4c5b11a-c5cb-48cd-b626-ff38e06ebeb4)
 

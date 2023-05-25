@@ -317,7 +317,7 @@
           "format": "time_series",
           "hide": false,
           "rawQuery": true,
-          "rawSql": "SELECT\r\n  iv_data.timestamp AS \"time\",\r\n  iv_data.value * 100 / pokemon_data.value AS \"IV Quote\"\r\nFROM\r\n  iv_data\r\n  INNER JOIN pokemon_data\r\nWHERE\r\n  $__timeFilter(iv_data.timestamp)\r\nORDER BY\r\n  iv_data.timestamp;",
+          "rawSql": "SELECT\r\n  iv_data.timestamp AS \"time\",\r\n  iv_data.value * 100 / pokemon_data.value AS \"IV Quote\"\r\nFROM\r\n  iv_data\r\n  INNER JOIN pokemon_data ON iv_data.id = pokemon_data.id\r\nWHERE\r\n  $__timeFilter(iv_data.timestamp)\r\nORDER BY\r\n  iv_data.timestamp;",
           "refId": "D",
           "sql": {
             "columns": [
@@ -1137,6 +1137,6 @@
   "timezone": "",
   "title": "Poké Metrics",
   "uid": "wdilg2BWz",
-  "version": 3,
+  "version": 6,
   "weekStart": ""
 }
